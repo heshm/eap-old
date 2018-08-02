@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("org.eap.*.*.endpoint")
+@ComponentScan("org.eap.**.endpoint")
 public class EapRestMvcConfiguration implements WebMvcConfigurer{
 	
 	

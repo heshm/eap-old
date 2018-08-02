@@ -4,14 +4,18 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.heshm</groupId>
-		<artifactId>module</artifactId>
+		<artifactId>app</artifactId>
 		<version>1.0.0</version>
 	</parent>
-	<artifactId>app</artifactId>
-	<packaging>pom</packaging>
+
+	<artifactId>eap-developer</artifactId>
+
+	<description>The developer project</description>
 	
-	<modules>
-		<module>eap-common</module>
-		<module>eap-developer</module>
-	</modules>
+	<dependencies>
+		<dependency>
+			<groupId>org.heshm</groupId>
+			<artifactId>eap-common</artifactId>
+		</dependency>
+	</dependencies>
 </project>

@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-@ComponentScan("org.eap.*.*.controller")
+@ComponentScan("org.eap.**.controller")
 public class EapMvcConfiguration implements WebMvcConfigurer{
 	
 	@Override
