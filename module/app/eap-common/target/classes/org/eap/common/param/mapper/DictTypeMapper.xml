@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.eap.common.param.mapper.DictTypeMapper">
+	<resultMap id="BaseResultMap" type="org.eap.common.param.domain.DictType">
+		<id column="id" jdbcType="CHAR" property="id" />
+		<result column="name" jdbcType="VARCHAR" property="name" />
+		<result column="value_length" jdbcType="INTEGER" property="valueLength" />
+	</resultMap>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+		delete from common_dict_type
+		where id = #{id,jdbcType=CHAR}
+	</delete>
+	<insert id="insert" parameterType="org.eap.common.param.domain.DictType">
+		insert into common_dict_type (id, name, value_length)
+		values (#{id,jdbcType=CHAR}, #{name,jdbcType=VARCHAR}, #{valueLength,jdbcType=INTEGER})
+	</insert>
+	<update id="updateByPrimaryKey" parameterType="org.eap.common.param.domain.DictType">
+		update common_dict_type
+		set name = #{name,jdbcType=VARCHAR},
+		value_length = #{valueLength,jdbcType=INTEGER}
+		where id = #{id,jdbcType=CHAR}
+	</update>
+	<select id="selectByPrimaryKey" parameterType="java.lang.String"
+		resultMap="BaseResultMap">
+		select id, name, value_length
+		from common_dict_type
+		where id = #{id,jdbcType=CHAR}
+	</select>
+	<select id="selectAll" resultMap="BaseResultMap">
+		select id, name, value_length
+		from common_dict_type
+	</select>
+</mapper>

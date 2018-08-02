@@ -1,0 +1,3 @@
+mybatis: 
+    configuration:  #Mybatis配置
+        default-statement-timeout: 30
