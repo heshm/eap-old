@@ -86,7 +86,7 @@ public class UnitEndpoint extends BaseEndpoint{
 	@DeleteMapping("/deleteOneUnit/{unitId}")
 	@ResponseStatus(HttpStatus.OK)
 	public String deleteOneUnit(@PathVariable("unitId") String unitId) {
-		unitService.deleteUnit(unitId);
+		//unitService.deleteUnit(unitId);
 		return DELETED;
 	}
 

@@ -34,7 +34,6 @@ public class UnitServiceImpl implements UnitService{
 			throw new DuplicateKeyException("计量单位ID已经存在!");
 		}
 		unitMapper.insert(unit);
-		unitMapper.insert(unit);
 	}
 
 	@Override
