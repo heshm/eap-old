@@ -11,3 +11,8 @@ test-output
 bin/
 **/*maven-eclipse.xml
 **/*externalToolBuilders
+web/site/.classpath
+module/app/eap-common/.classpath
+module/core/eap-framework-web/.classpath
+module/core/eap-framework/.classpath
+module/core/eap-framework/.classpath
