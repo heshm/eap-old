@@ -31,6 +31,7 @@
 		<mysql.connector.version>8.0.11</mysql.connector.version>
 		<spring.oauth2.version>2.0.1.RELEASE</spring.oauth2.version>
 		<spring.data.version>2.0.9.RELEASE</spring.data.version>
+		<caffeine.version>2.6.2</caffeine.version>
 	</properties>
 
 	<build>
@@ -90,11 +91,11 @@
 				<scope>compile</scope>
 			</dependency>
 			<dependency>
-            	<groupId>org.springframework.boot</groupId>
-            	<artifactId>spring-boot-devtools</artifactId>
-            	<!-- <optional>true</optional> -->
-            	<version>${spring.boot.version}</version>
-        	</dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-devtools</artifactId>
+				<!-- <optional>true</optional> -->
+				<version>${spring.boot.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter</artifactId>
@@ -122,6 +123,18 @@
 			</dependency>
 
 			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-cache</artifactId>
+				<version>${spring.boot.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.github.ben-manes.caffeine</groupId>
+				<artifactId>caffeine</artifactId>
+				<version>${caffeine.version}</version>
+			</dependency>
+
+			<dependency>
 				<groupId>org.springframework.security.oauth.boot</groupId>
 				<artifactId>spring-security-oauth2-autoconfigure</artifactId>
 				<version>${spring.oauth2.version}</version>
@@ -138,23 +151,23 @@
 				</exclusions>
 			</dependency>
 			<dependency>
-    			<groupId>org.springframework.data</groupId>
-    			<artifactId>spring-data-commons</artifactId>
-    			<version>${spring.data.version}</version>
-    			<exclusions>
-	    			<exclusion>
-	    				<groupId>org.springframework</groupId>
-	    				<artifactId>spring-core</artifactId>
-	    			</exclusion>
-	    			<exclusion>
-	    				<groupId>org.springframework</groupId>
-	    				<artifactId>spring-beans</artifactId>
-	    			</exclusion>
-	    			<exclusion>
-	    				<groupId>org.slf4j</groupId>
-	    				<artifactId>slf4j-api</artifactId>
-	    			</exclusion>
-    			</exclusions>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-commons</artifactId>
+				<version>${spring.data.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring-core</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.springframework</groupId>
+						<artifactId>spring-beans</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>org.slf4j</groupId>
+						<artifactId>slf4j-api</artifactId>
+					</exclusion>
+				</exclusions>
 			</dependency>
 			<dependency> <!-- 需要输出XML文件使用 -->
 				<groupId>com.fasterxml.jackson.dataformat</groupId>

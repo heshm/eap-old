@@ -1,3 +1,5 @@
 spring: 
     mvc: 
         static-path-pattern: /static/**
+    thymeleaf: 
+        cache: false

@@ -34,7 +34,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import org.springframework.http.HttpStatus;
-
+import org.springframework.validation.annotation.Validated;
 import org.eap.common.param.domain.Unit;
 import org.eap.common.param.service.UnitService;
 import org.eap.framework.web.endpoint.BaseEndpoint;
@@ -71,7 +71,7 @@ public class UnitEndpoint extends BaseEndpoint{
 	
 	@PostMapping("/createOneUnit")
 	@ResponseStatus(HttpStatus.CREATED)
-	public String createOneUnit(@Valid @RequestBody Unit unit){
+	public String createOneUnit(@Validated @RequestBody Unit unit){
 		unitService.saveUnit(unit);
 		return CREATED;
 	}

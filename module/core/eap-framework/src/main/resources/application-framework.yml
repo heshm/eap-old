@@ -1,3 +1,9 @@
 mybatis: 
     configuration:  #Mybatis配置
         default-statement-timeout: 30
+
+spring: 
+    cache: 
+        cache-names: sysCache
+        caffeine:
+            spec: maximumSize=500,expireAfterAccess=600s

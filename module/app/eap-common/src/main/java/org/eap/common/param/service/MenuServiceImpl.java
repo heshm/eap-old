@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 //import org.springframework.cache.annotation.CacheEvict;
@@ -39,7 +41,7 @@ public class MenuServiceImpl implements MenuService {
 	private MenuXrefMapper menuXrefMapper;
 	
 	@Override
-	//@Cacheable(cacheNames="sysCache",key="'menuAll_' + #menuId")
+	@Cacheable(cacheNames="sysCache",key="'menuAll_' + #menuId")
 	public Menu readAllMenuById(String menuId) {
 		Menu menu = menuMapper.selectByMenuId(menuId);
 		if (null != menu && !menu.getIsLeaf()){
@@ -58,14 +60,14 @@ public class MenuServiceImpl implements MenuService {
 	}
 
 	@Override
-	//@Cacheable(cacheNames="sysCache",key="'menuParent_' + #menuId")
+	@Cacheable(cacheNames="sysCache",key="'menuParent_' + #menuId")
 	public Menu readParentMenu(String menuId) {
 		String parentMenuId = menuXrefMapper.selectOne(menuId).getMenuId();
 		return menuMapper.selectByPrimaryKey(parentMenuId);
 	}
 	
 	@Override
-	//@Cacheable(cacheNames="sysCache")
+	@Cacheable(cacheNames="sysCache")
 	public List<String> readParentMenu(String[] menuIdArray) {
 		// TODO Auto-generated method stub
 		List<MenuXref> menuXrefList = menuXrefMapper.selectListByCmenu(menuIdArray);
@@ -86,7 +88,7 @@ public class MenuServiceImpl implements MenuService {
 
 	@Transactional(propagation=Propagation.REQUIRES_NEW) 
 	@Override
-	//@CacheEvict(cacheNames="sysCache",allEntries=true)
+	@CacheEvict(cacheNames="sysCache",allEntries=true)
 	public void savaMenu(Menu menu) {
 		if(StringUtils.isEmpty(menu.getMenuId())){
 			menu.setMenuId(IDUtils.uuid());
@@ -106,7 +108,7 @@ public class MenuServiceImpl implements MenuService {
 
 	@Override
 	@Transactional(propagation=Propagation.REQUIRES_NEW) 
-	//@CacheEvict(cacheNames="sysCache",allEntries=true)
+	@CacheEvict(cacheNames="sysCache",allEntries=true)
 	public void deleteMenu(String menuId) {
 		Menu menu = readAllMenuById(menuId);
 		Set<String> menuSet = listMenuId(menu);

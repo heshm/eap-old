@@ -1,3 +1,6 @@
+debug: false # Enable debug logs.
+trace: false # Enable trace logs.
+
 logging: 
     level: 
         root: INFO
@@ -6,6 +9,8 @@ logging:
         
         
 spring: 
+    application:
+        name: eap
     profiles: 
         include: framework,framework-web
     datasource: 
