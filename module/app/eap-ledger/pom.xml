@@ -4,18 +4,17 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.heshm</groupId>
-		<artifactId>module</artifactId>
+		<artifactId>app</artifactId>
 		<version>1.0.0</version>
 	</parent>
-	<artifactId>app</artifactId>
-	<packaging>pom</packaging>
+
+	<artifactId>eap-ledger</artifactId>
 	
-	<modules>
-		<module>eap-common</module>
-		<module>eap-developer</module>
-		<module>eap-crm</module>
-		<module>eap-ledger</module>
-		<!-- <module>eap-oa</module> -->
-		<module>eap-stock</module>
-	</modules>
+	<dependencies>
+		<dependency>
+			<groupId>org.heshm</groupId>
+			<artifactId>eap-framework-web</artifactId>
+		</dependency>
+	</dependencies>
+
 </project>

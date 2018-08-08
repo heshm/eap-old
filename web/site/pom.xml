@@ -24,6 +24,22 @@
 			<artifactId>eap-developer</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>org.heshm</groupId>
+			<artifactId>eap-crm</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.heshm</groupId>
+			<artifactId>eap-ledger</artifactId>
+		</dependency>
+		<!-- <dependency>
+			<groupId>org.heshm</groupId>
+			<artifactId>eap-oa</artifactId>
+		</dependency> -->
+		<dependency>
+			<groupId>org.heshm</groupId>
+			<artifactId>eap-stock</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>

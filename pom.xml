@@ -32,6 +32,7 @@
 		<spring.oauth2.version>2.0.1.RELEASE</spring.oauth2.version>
 		<spring.data.version>2.0.9.RELEASE</spring.data.version>
 		<caffeine.version>2.6.2</caffeine.version>
+		<flowable.version>6.3.1</flowable.version>
 	</properties>
 
 	<build>
@@ -91,6 +92,30 @@
 				<scope>compile</scope>
 			</dependency>
 			<dependency>
+				<groupId>org.heshm</groupId>
+				<artifactId>eap-crm</artifactId>
+				<version>${project.version}</version>
+				<type>jar</type>
+			</dependency>
+			<dependency>
+				<groupId>org.heshm</groupId>
+				<artifactId>eap-ledger</artifactId>
+				<version>${project.version}</version>
+				<type>jar</type>
+			</dependency>
+			<dependency>
+				<groupId>org.heshm</groupId>
+				<artifactId>eap-oa</artifactId>
+				<version>${project.version}</version>
+				<type>jar</type>
+			</dependency>
+			<dependency>
+				<groupId>org.heshm</groupId>
+				<artifactId>eap-stock</artifactId>
+				<version>${project.version}</version>
+				<type>jar</type>
+			</dependency>
+			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-devtools</artifactId>
 				<!-- <optional>true</optional> -->
@@ -121,7 +146,16 @@
 				<artifactId>spring-boot-starter-thymeleaf</artifactId>
 				<version>${spring.boot.version}</version>
 			</dependency>
-
+			<dependency>
+				<groupId>org.flowable</groupId>
+				<artifactId>flowable-spring-boot-starter</artifactId>
+				<version>${flowable.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.flowable</groupId>
+				<artifactId>flowable-json-converter</artifactId>
+				<version>${flowable.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-cache</artifactId>
