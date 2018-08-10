@@ -7,3 +7,8 @@ spring:
         cache-names: sysCache
         caffeine:
             spec: maximumSize=500,expireAfterAccess=600s
+#    liquibase: 
+#        enabled: true
+            
+#flowable: 
+#    database-schema-update: true

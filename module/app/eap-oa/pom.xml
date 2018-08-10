@@ -16,10 +16,6 @@
 			<artifactId>eap-framework-web</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.flowable</groupId>
-			<artifactId>flowable-json-converter</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>org.heshm</groupId>
 			<artifactId>eap-common</artifactId>
 		</dependency>

@@ -15,7 +15,7 @@
 		<module>eap-developer</module>
 		<module>eap-crm</module>
 		<module>eap-ledger</module>
-		<!-- <module>eap-oa</module> -->
+		<module>eap-oa</module>
 		<module>eap-stock</module>
 	</modules>
 </project>
