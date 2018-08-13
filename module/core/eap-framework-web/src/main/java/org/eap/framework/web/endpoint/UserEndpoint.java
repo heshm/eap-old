@@ -15,6 +15,11 @@ public class UserEndpoint extends BaseEndpoint{
 	@Autowired
 	private EapSecService eapSecService;
 	
+	@GetMapping
+	public String index() {
+		return "{\"success\":true}";
+	}
+	
 	@GetMapping("/readLoginUserInfo")
 	public AdminUser readLoginUserInfo() {
 		UserDetails userDetails = AuthenticationUtils.getPrincipal();

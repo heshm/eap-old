@@ -10,5 +10,7 @@ spring:
 #    liquibase: 
 #        enabled: true
             
-#flowable: 
+flowable: 
 #    database-schema-update: true
+    idm: 
+        enabled: false
