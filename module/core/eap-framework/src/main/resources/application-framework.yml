@@ -4,13 +4,13 @@ mybatis:
 
 spring: 
     cache: 
-        cache-names: sysCache
+        cache-names: sysCache,paramCache
         caffeine:
             spec: maximumSize=500,expireAfterAccess=600s
 #    liquibase: 
 #        enabled: true
             
 flowable: 
-#    database-schema-update: true
+    #database-schema-update: true
     idm: 
         enabled: false
