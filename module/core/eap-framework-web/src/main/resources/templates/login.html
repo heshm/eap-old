@@ -1,57 +1,102 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:th="http://www.thymeleaf.org">
+	xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="utf-8">
+<meta charset="utf-8" />
+<meta content="webkit" name="renderer" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>欢迎登陆系统</title>
-<!-- Tell the browser to be responsive to screen width -->
-<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+<meta http-equiv="Cache-Control"
+	content="no-cache, no-store, must-revalidate" />
+<meta name="description" content="PoweredByJeeSiteV4.0" />
+<meta content="no-cache" http-equiv="Pragma" />
+<meta http-equiv="Expires" content="0" />
+<meta content="width=device-width, initial-scale=1, user-scalable=1"
+	name="viewport" />
+<title>EAP</title>
+<script th:src="@{/static/jquery/jquery-1.12.4.min.js}"></script>
+<script th:src="@{/static/jquery/jquery-migrate-1.4.1.min.js}"></script>
 
-<link rel="stylesheet" th:href="@{/static/bootstrap-3.3.7/css/bootstrap.min.css}" />
-<link rel="stylesheet" th:href="@{/static/custom/css/login.css}" />
+<link rel="stylesheet" th:href="@{/static/fonts/font-icons.min.css}">
+<link rel="stylesheet"
+	th:href="@{/static/bootstrap/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/static/select2/4.0/select2.css}">
+<link rel="stylesheet" th:href="@{/static/icheck/1.0/minimal/grey.css}">
+<link rel="stylesheet"
+	th:href="@{/static/adminlte/css/AdminLTE.min.css}">
+<link rel="stylesheet" th:href="@{/static/common/jeesite.css}">
+
+<link rel="stylesheet" th:href="@{/static/icheck/1.0/square/blue.css}">
+<link rel="stylesheet"
+	th:href="@{/static/jquery-toastr/2.0/toastr.min.css}">
+<link rel="stylesheet" th:href="@{/static/modules/sys/sysLogin.css}">
+
 </head>
 <body class="hold-transition login-page">
-<div class="login-box">
-	<div class="login-logo"> <a href="#"><b>E</b>AP</a> </div>
-	<!-- /.login-logo -->
-	<div class="login-box-body">
-		<p class="login-box-msg">请输入你的用户名及密码</p>
-		<p class="login-box-msg" style="color:red" th:unless="${#strings.isEmpty(param.login_error)}">用户名或密码错误!</p>
-		<form th:action="@{/login_site_post}" method="post">
-			<div class="form-group has-feedback">
-				<input type="text" name="username" class="form-control" value="admin" placeholder="用户名" />
-				<span class="glyphicon glyphicon-user form-control-feedback"></span> 
-			</div>
-			<div class="form-group has-feedback">
-				<input type="password" class="form-control" name="password" value="admin" placeholder="密码" />
-				<span class="glyphicon glyphicon-lock form-control-feedback"></span> 
-			</div>
-			<div class="row">
-				<div class="col-xs-8">
-					<div class="checkbox icheck">
-						<label><input type="checkbox" name="remember-me"/>&nbsp;&nbsp;记住我(公共场所慎用)</label>
+	<div class="login-box">
+		<div class="login-logo">
+			<a href="/"><b>EAP</b> <small>V1.0</small></a>
+		</div>
+		<div class="login-box-body">
+			<form id="loginForm" th:action="@{/login_site_post}" method="post">
+				<div class="form-group has-feedback">
+					<span class="glyphicon glyphicon-user form-control-feedback"
+						title="登录账号"></span> <input type="text" id="username"
+						name="username" class="form-control required"
+						data-msg-required="请填写登录账号." placeholder="登录账号" />
+				</div>
+				<div class="form-group has-feedback">
+					<span class="glyphicon glyphicon-lock form-control-feedback"
+						title="登录密码，鼠标按下显示密码"
+						onmousedown="$('#password').attr('type','text')"
+						onmouseup="$('#password').attr('type','password')"></span> <input
+						type="password" id="password" name="password" value=""
+						class="form-control required" data-msg-required="请填写登录密码."
+						placeholder="登录密码" autocomplete="off" />
+				</div>
+				<div class="form-group">
+					<div class="mt5 icheck">
+						<label title="公共场所慎用,下次不需要再填写帐号"><input type="checkbox"
+							name="rememberUserCode" checked class="form-control"
+							data-style="square-blue"> 记住账号</label> &nbsp; <label
+							title="公共场所慎用,下次不需要再填写帐号和密码"><input type="checkbox"
+							name="rememberMe" class="form-control" data-style="square-blue">
+							记住密码</label>
 					</div>
 				</div>
-				<!-- /.col -->
-				<div class="col-xs-4">
-					<button type="submit" class="btn btn-primary btn-block btn-flat">登录</button>
+				<div class="form-group">
+					<button type="submit" class="btn btn-primary btn-block btn-flat"
+						id="btnSubmit" data-loading="登录验证成功，正在进入..."
+						data-login-valid="正在验证登录，请稍后...">立即登录</button>
 				</div>
-				<!-- /.col --> 
-			</div>
-		</form>
-		<div class="row">
-			<div class="col-xs-8">
-				<a href="#">忘记密码</a>
-			</div>
-			<div class="col-xs-4">
-				<a href="#" class="text-center">注册</a> 
-			</div>
-		</div> 
+			</form>
+		</div>
+		<div class="login-copyright">
+			&copy; 2019 EAP - Powered By <a href="">Heshm V1.0</a>
+		</div>
 	</div>
-	<!-- /.login-box-body --> 
-</div>
-<!-- /.login-box -->
-
+	<a id="scroll-up" href="#" class="btn btn-sm"><i class="fa fa-angle-double-up"></i></a>
 </body>
+<script th:src="@{/static/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{/static/select2/4.0/select2.js}"></script>
+<script th:src="@{/static/select2/4.0/i18n/zh_CN.js}"></script>
+<script th:src="@{/static/layer/3.1/layer.js}"></script>
+<script th:src="@{/static/my97/WdatePicker.js}"></script>
+<script th:src="@{/static/jquery-validation/1.16/jquery.validate.js}"></script>
+<script th:src="@{/static/jquery-validation/1.16/localization/messages_zh_CN.js}"></script>
+<script th:src="@{/static/jquery-validation/1.16/jquery.validate.extend.js}"></script>
+<script th:src="@{/static/common/jeesite.js}"></script>
+<script th:src="@{/static/common/i18n/jeesite_zh_CN.js}"></script>
+<script th:src="@{/static/common/common.js}"></script>
+
+<script th:src="@{/static/jquery-toastr/2.0/toastr.min.js}"></script>
+<script th:src="@{/static/common/des.js}"></script>
+<script th:src="@{/static/modules/sys/sysLogin.js}"></script>
+
+<script th:inline="javascript">
+var hasError = [[${param.login_error}]];
+if(hasError){
+	js.showMessage("", "用户名或者密码错误!", "error");  
+}
+  
+</script>
 </html>

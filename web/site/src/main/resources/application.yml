@@ -19,7 +19,7 @@ spring:
         druid: 
             url: jdbc:mysql://localhost:3306/eap?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
             username: root
-            password: Hch_2008
+            password: root
             driver-class-name: com.mysql.cj.jdbc.Driver
             #driver-class-name: com.mysql.jdbc.Driver
             initial-size: 5
