@@ -34,7 +34,7 @@
 <body class="hold-transition login-page">
 	<div class="login-box">
 		<div class="login-logo">
-			<a href="/"><b>EAP</b> <small>V1.0</small></a>
+			<a href="/"><b>E</b>AP <small>V1.0</small></a>
 		</div>
 		<div class="login-box-body">
 			<form id="loginForm" th:action="@{/login_site_post}" method="post">
@@ -95,7 +95,7 @@
 <script th:inline="javascript">
 var hasError = [[${param.login_error}]];
 if(hasError){
-	js.showMessage("", "用户名或者密码错误!", "error");  
+	js.showMessage("用户名或者密码错误!");  
 }
   
 </script>
