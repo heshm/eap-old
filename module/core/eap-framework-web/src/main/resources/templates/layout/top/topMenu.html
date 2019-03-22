@@ -1,0 +1,14 @@
+<nav class="navbar navbar-static-top">
+	<div class="logo" data-toggle="push-menu">
+		<b>E</b>AP
+		<small>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i class="fa fa-bars"></i></small>
+	</div>
+	<div class="navbar-custom-menu">
+		<ul class="nav navbar-nav">
+			<li><a href="javascript:" id="fullScreen" title="全屏"><i class="fa fa-arrows-alt"></i></a></li>
+			<li><a href="javascript:" id="switchSkin" title="切换主题" style="margin-top:-1px;"><i class="fa fa-dashboard"></i></a></li>
+			<li th:replace="~{/layout/top/topMenuOnline}"></li>
+			<li th:replace="~{/layout/top/topMenuUser}"></li>
+		</ul>
+	</div>
+</nav>

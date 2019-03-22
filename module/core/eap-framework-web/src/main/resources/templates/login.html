@@ -13,21 +13,19 @@
 <meta content="width=device-width, initial-scale=1, user-scalable=1"
 	name="viewport" />
 <title>EAP</title>
+<script th:src="@{/js/global.js}"></script>
 <script th:src="@{/static/jquery/jquery-1.12.4.min.js}"></script>
 <script th:src="@{/static/jquery/jquery-migrate-1.4.1.min.js}"></script>
 
 <link rel="stylesheet" th:href="@{/static/fonts/font-icons.min.css}">
-<link rel="stylesheet"
-	th:href="@{/static/bootstrap/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/static/bootstrap/css/bootstrap.min.css}">
 <link rel="stylesheet" th:href="@{/static/select2/4.0/select2.css}">
 <link rel="stylesheet" th:href="@{/static/icheck/1.0/minimal/grey.css}">
-<link rel="stylesheet"
-	th:href="@{/static/adminlte/css/AdminLTE.min.css}">
+<link rel="stylesheet" th:href="@{/static/adminlte/css/AdminLTE.min.css}">
 <link rel="stylesheet" th:href="@{/static/common/jeesite.css}">
 
 <link rel="stylesheet" th:href="@{/static/icheck/1.0/square/blue.css}">
-<link rel="stylesheet"
-	th:href="@{/static/jquery-toastr/2.0/toastr.min.css}">
+<link rel="stylesheet" th:href="@{/static/jquery-toastr/2.0/toastr.min.css}">
 <link rel="stylesheet" th:href="@{/static/modules/sys/sysLogin.css}">
 
 </head>
@@ -41,7 +39,7 @@
 				<div class="form-group has-feedback">
 					<span class="glyphicon glyphicon-user form-control-feedback"
 						title="登录账号"></span> <input type="text" id="username"
-						name="username" class="form-control required"
+						name="username" class="form-control required" value="admin"
 						data-msg-required="请填写登录账号." placeholder="登录账号" />
 				</div>
 				<div class="form-group has-feedback">
@@ -49,7 +47,7 @@
 						title="登录密码，鼠标按下显示密码"
 						onmousedown="$('#password').attr('type','text')"
 						onmouseup="$('#password').attr('type','password')"></span> <input
-						type="password" id="password" name="password" value=""
+						type="password" id="password" name="password" value="admin"
 						class="form-control required" data-msg-required="请填写登录密码."
 						placeholder="登录密码" autocomplete="off" />
 				</div>
@@ -91,12 +89,4 @@
 <script th:src="@{/static/jquery-toastr/2.0/toastr.min.js}"></script>
 <script th:src="@{/static/common/des.js}"></script>
 <script th:src="@{/static/modules/sys/sysLogin.js}"></script>
-
-<script th:inline="javascript">
-var hasError = [[${param.login_error}]];
-if(hasError){
-	js.showMessage("用户名或者密码错误!");  
-}
-  
-</script>
 </html>

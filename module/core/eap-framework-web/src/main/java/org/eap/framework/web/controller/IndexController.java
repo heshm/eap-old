@@ -7,7 +7,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class IndexController extends BaseController {
 	
 	@GetMapping("/index")
-	public String login(){
+	public String index(){
+		return "layout";
+	}
+	@GetMapping("/index2")
+	public String index2() {
 		return "index";
 	}
 

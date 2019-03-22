@@ -18,11 +18,6 @@ $("#loginForm").validate(
 			submitHandler : function(c) {
 				var d = $("#username").val(), a = $("#password").val(), b = $(
 						"#validCode").val();
-				if (secretKey != "") {
-					$("#username").val(DesUtils.encode(d, secretKey));
-					$("#password").val(DesUtils.encode(a, secretKey));
-					$("#validCode").val(DesUtils.encode(b, secretKey))
-				}
 				js.ajaxSubmitForm($(c), function(f, e, g) {
 					if (f.isValidCodeLogin == true) {
 						$("#isValidCodeLogin").show();

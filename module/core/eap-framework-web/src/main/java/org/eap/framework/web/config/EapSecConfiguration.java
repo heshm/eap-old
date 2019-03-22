@@ -1,5 +1,6 @@
 package org.eap.framework.web.config;
 
+import org.eap.framework.web.service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,8 +13,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
-import org.eap.framework.web.service.UserDetailsServiceImpl;
 
 /**
  * Created by Lenovo on 2017/10/12. 访问安全配置类
@@ -56,6 +55,7 @@ public class EapSecConfiguration extends WebSecurityConfigurerAdapter {
                 .and()*/
             .authorizeRequests()
                 .antMatchers("/login").permitAll()
+                .antMatchers("/js/**").permitAll()
                 //.antMatchers("/authDemo").access("hasAuthority('PERM_SYS_IMPORT')")
                 //.antMatchers("/**").authenticated()
                 .anyRequest()

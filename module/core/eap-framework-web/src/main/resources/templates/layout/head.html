@@ -1,0 +1,33 @@
+<head xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8" />
+<meta content="webkit" name="renderer" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control"
+	content="no-cache, no-store, must-revalidate" />
+<meta name="description" content="PoweredByJeeSiteV4.0" />
+<meta content="no-cache" http-equiv="Pragma" />
+<meta http-equiv="Expires" content="0" />
+<meta content="width=device-width, initial-scale=1, user-scalable=1"
+	name="viewport" />
+<title>EAP</title>
+<script th:src="@{/js/global.js}"></script>
+<script th:src="@{/static/jquery/jquery-1.12.4.min.js}"></script>
+<script th:src="@{/static/jquery/jquery-migrate-1.4.1.min.js}"></script>
+<style th:unless="${#strings.isEmpty(param.__layer)}">
+.main-content>.box-main>.box-header{display:none;}
+</style>
+
+<link rel="stylesheet" th:href="@{/static/fonts/font-icons.min.css}">
+<link rel="stylesheet" th:href="@{/static/bootstrap/css/bootstrap.min.css}">
+<link rel="stylesheet" th:href="@{/static/select2/4.0/select2.css}">
+<link rel="stylesheet" th:href="@{/static/icheck/1.0/minimal/grey.css}">
+<link rel="stylesheet" th:href="@{/static/wdScrollTab/css/TabPanel.css}">
+<link rel="stylesheet" th:href="@{/static/adminlte/css/AdminLTE.min.css}">
+<link rel="stylesheet" th:href="@{/static/common/jeesite.css}">
+<link rel="stylesheet" th:href="@{/static/common/common.css}">
+
+<link rel="stylesheet" th:href="@{/static/jquery-toastr/2.0/toastr.min.css}">
+<link rel="stylesheet" th:href="@{/static/adminlte/css/skins/skin-blue.css}">
+<link rel="stylesheet" th:href="@{/static/modules/sys/sysIndex.css}">
+
+</head>

@@ -1,0 +1,42 @@
+<section class="sidebar">
+	<div class="user-panel">
+		<div class="pull-left image">
+			<img data-href="" data-title="个人中心" class="img-circle pointer" src="/static/images/user1.jpg">
+			<script>
+				$('.user-panel .img-circle').click(function(){
+					if (!$('.main-header').is(':hidden')){
+						$('.main-header').slideUp(300);
+						$('[data-toggle="push-menu"]').click();
+					}else{
+						$('.main-header').slideDown(300);
+					}
+				});
+			</script>
+		</div>
+		<div class="pull-left info">
+			<p>张三</p>
+			<a href="javascript:"><i class="fa fa-circle text-success"></i>在线</a>
+			<a href="logout"><i class="fa fa-sign-out text-danger"></i>注销</a>
+		</div>
+	</div>
+	<div id="leftMenu" data-widget="tree">
+		<ul class="sidebar-menu">
+			<li class="treeview">
+				<a title="系统管理" href="javascript:" data-href="blank" class="addTabPage" data-code="1108540331875610624"><i class="fa fa-fw icon-settings"></i> <span>系统管理</span>
+					<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+				<ul class="treeview-menu">
+					<li class="treeview">
+						<a title="组织管理" href="javascript:" data-href="blank" class="addTabPage" data-code="1108540332571865088"><i class="fa fa-fw icon-grid"></i> <span>组织管理</span>
+							<span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span></a>
+						<ul class="treeview-menu">
+							<li class="treeview"><a title="用户管理" href="javascript:" data-href="/a/sys/empUser/index" class="addTabPage" data-code="1108540332865466368"><i class="fa fa-fw icon-user"></i> <span>用户管理</span></a></li>
+							<li class="treeview"><a title="机构管理" href="javascript:" data-href="/a/sys/office/list" class="addTabPage" data-code="1108540335008755712"><i class="fa fa-fw icon-grid"></i> <span>机构管理</span></a></li>
+							<li class="treeview"><a title="公司管理" href="javascript:" data-href="/a/sys/company/list" class="addTabPage" data-code="1108540335918919680"><i class="fa fa-fw icon-fire"></i> <span>公司管理</span></a></li>
+							<li class="treeview"><a title="岗位管理" href="javascript:" data-href="/a/sys/post/list" class="addTabPage" data-code="1108540336883609600"><i class="fa fa-fw icon-trophy"></i> <span>岗位管理</span></a></li>
+						</ul>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</section>

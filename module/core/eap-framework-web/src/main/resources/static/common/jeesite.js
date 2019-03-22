@@ -515,7 +515,12 @@ if (typeof jQuery === "undefined") {
             if (responseText && responseText != "") {
                 js.error(js.abbr(responseText, 500));
                 if (responseText.indexOf("<html ") != -1 || responseText.indexOf("<head ") != -1 || responseText.indexOf("<body ") != -1) {
-                    js.showMessage("未知错误，F12查看异常信息！", null, "error")
+                    if(responseText.indexOf("login-box-body") != -1){
+                    	js.showMessage("用户名或者密码错误！", null, "error")
+                    }else{
+                    	js.showMessage("未知错误，F12查看异常信息！", null, "error")
+                    }
+                	
                 } else {
                     try {
                         var json = JSON.parse(responseText);
