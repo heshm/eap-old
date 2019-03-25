@@ -30,5 +30,10 @@ public class IndexController extends BaseController {
 		        .collect(Collectors.toList());
 		return principals.size();
 	}
+	
+	@GetMapping("/dashboard")
+	public String dashboard() {
+		return "dashboard";
+	}
 
 }
