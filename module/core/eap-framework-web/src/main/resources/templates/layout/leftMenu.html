@@ -1,4 +1,5 @@
-<section class="sidebar">
+<section class="sidebar" 
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 	<div class="user-panel">
 		<div class="pull-left image">
 			<img data-href="" data-title="个人中心" class="img-circle pointer" src="/static/images/user1.jpg">
@@ -14,7 +15,7 @@
 			</script>
 		</div>
 		<div class="pull-left info">
-			<p>张三</p>
+			<p sec:authentication="name">张三</p>
 			<a href="javascript:"><i class="fa fa-circle text-success"></i>在线</a>
 			<a href="javascript:$('#logoutForm').submit()"><i class="fa fa-sign-out text-danger"></i>注销</a>
 		</div>
