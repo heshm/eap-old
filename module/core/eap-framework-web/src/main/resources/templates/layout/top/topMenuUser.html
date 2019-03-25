@@ -14,8 +14,9 @@
 		</li>
 		<li class="divider"></li>
 		<li>
-			<a href="logout">
-			<i class="fa fa-sign-out"></i>退出登录</a>
+			<a href="javascript:$('#logoutForm').submit()" ><i class="fa fa-sign-out"></i>退出登录</a>
 		</li>
 	</ul>
+	<form th:action="@{/logout}" method="post" id="logoutForm">
+	</form>
 </li>

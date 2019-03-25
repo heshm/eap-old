@@ -11,8 +11,11 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.session.SessionRegistry;
+import org.springframework.security.core.session.SessionRegistryImpl;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.session.HttpSessionEventPublisher;
 
 /**
  * Created by Lenovo on 2017/10/12. 访问安全配置类
@@ -80,6 +83,11 @@ public class EapSecConfiguration extends WebSecurityConfigurerAdapter {
                 .passwordParameter("password")
                 .defaultSuccessUrl("/loginSuccess")
                 .loginPage("/login");
+            http
+            .sessionManagement()
+                .maximumSessions(1)
+                .sessionRegistry(sessionRegistry());
+            http.headers().frameOptions().sameOrigin();
         // @formatter:on
 	}
 
@@ -88,5 +96,15 @@ public class EapSecConfiguration extends WebSecurityConfigurerAdapter {
 	public UserDetailsService userDetailsService() {
 		return new UserDetailsServiceImpl();
 	}
+	
+	@Bean
+    public SessionRegistry sessionRegistry() {
+        return new SessionRegistryImpl();
+    }
+	
+	@Bean
+    public HttpSessionEventPublisher httpSessionEventPublisher() {
+        return new HttpSessionEventPublisher();
+    }
 
 }
