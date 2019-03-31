@@ -20,7 +20,7 @@ import org.springframework.security.oauth2.provider.token.store.InMemoryTokenSto
 @Configuration
 public class EapOauth2Configuration {
 	
-	private final static String EAP_RESOURCE_ID = "erpnext";
+	private final static String EAP_RESOURCE_ID = "eap";
 	
 	@Configuration
 	@EnableResourceServer
@@ -64,12 +64,12 @@ public class EapOauth2Configuration {
 		public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 			// @formatter:off
 			clients.inMemory()
-				.withClient("erpnext-front")
+				.withClient("eap-front")
 				.resourceIds(EAP_RESOURCE_ID)
 				.authorizedGrantTypes("password", "authorization_code", "refresh_token")
 				.scopes("read","write","upload","trust")
-				.secret("{noop}erpnext-secret")
-				.accessTokenValiditySeconds(6000);
+				.secret("{noop}eap-secret")
+				.accessTokenValiditySeconds(610);
 						
 			// @formatter:on
 		}
